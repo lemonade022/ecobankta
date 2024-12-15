@@ -1,0 +1,344 @@
+/* Reset CSS */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+  background: linear-gradient(rgba(90, 224, 170, 1), rgba(67, 200, 249, 1));
+  overflow-y: auto;
+  height: 100%; /* Pastikan elemen body dan html mengisi seluruh viewport */
+}
+
+/* Navbar Styles */
+.navbar {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  height: 90px;
+  display: flex;
+  justify-content: center; /* Menyusun elemen navbar secara horizontal */
+  align-items: center;     /* Menyusun elemen navbar secara vertikal */
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between; /* Menyusun elemen di kiri dan kanan */
+  align-items: center;           /* Menyusun elemen di tengah secara vertikal */
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+/* Logo */
+.logo {
+  flex-shrink: 0;
+}
+
+.logo img {
+  height: 75px;
+  object-fit: contain;
+  transition: height 0.3s ease;
+}
+
+/* Responsif untuk logo */
+@media (max-width: 1024px) {
+  .logo img {
+    height: 65px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo img {
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    height: 40px;
+  }
+}
+
+/* Navbar Links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;  /* Pastikan item navbar rata tengah */
+}
+
+.nav-item {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 30px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  transform: scale(1.1);
+}
+
+.nav-item:active {
+  transform: translateY(-2px); /* Sedikit turun untuk efek klik */
+}
+
+.nav-item-redeem {
+  color: gray;
+  background: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Profile Image */
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.1);
+}
+
+.profile-img:active {
+  transform: translateY(-2px); /* Sedikit turun untuk efek klik */
+}
+
+/* Burger Menu */
+.burger-menu {
+  display: none;
+  flex-shrink: 0;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.burger-menu span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animasi burger menu */
+.burger-menu.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsif untuk burger menu */
+@media (max-width: 768px) {
+  .burger-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 90px);
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .navbar-links.show {
+    display: flex;
+    transform: translateX(0);
+  }
+}
+
+@media (min-width: 769px) {
+  .navbar-links {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    transform: none;
+  }
+}
+
+/* Main Content */
+h1.title {
+  color: white;
+}
+
+p.text {
+  color: #ffffff;
+}
+
+.medsos-box {
+  background-color: rgba(255, 255, 255, 0.2); /* Putih transparan */
+  border: 1px solid #ffffff;
+  color: #333;
+  width: 100%;
+  height: 140px;
+  max-width: 450px; /* Ubah dari 300px menjadi 350px (atau sesuai kebutuhan) */
+  padding: 16px;
+  border-radius: 8px;
+  position: relative; /* Agar elemen dalam box bisa diposisikan relatif */
+  overflow: visible; /* Biarkan elemen anak melampaui batas box */
+  z-index: 1; /* Tingkatkan prioritas box */
+}
+
+.medsos-title {
+  display: inline-block; /* Agar terlihat seperti tombol */
+  background-color: #00674F; /* Warna latar tombol */
+  color: white; /* Warna teks */
+  padding: 8px 16px; /* Padding untuk membuat tombol */
+  border-radius: 8px; /* Membuat sudut tombol membulat */
+  font-size: 14px; /* Ukuran teks */
+  font-weight: bold; /* Tebalkan teks */
+  position: absolute; /* Supaya posisinya bisa diatur */
+  top: -10px; /* Atur jarak dari atas box */
+  left: 10px; /* Atur jarak dari kiri box */
+  z-index: 2; /* Pastikan berada di atas elemen lain */
+}
+
+/* Elemen teks dalam box */
+.medsos-box p {
+  position: absolute; /* Posisi relatif terhadap parent .medsos-box */
+  top: 50%; /* Tempatkan di 50% dari tinggi box */
+  transform: translateY(-50%); /* Geser ke atas setengah tinggi elemen untuk rata tengah vertikal */
+  left: 0; /* Kembalikan posisi horizontal ke kiri */
+  padding: 0 16px; /* Opsional: beri sedikit padding jika diperlukan */
+  margin: 0; /* Hilangkan margin default */
+  text-align: left; /* Pastikan teks tetap rata kiri */
+  width: 100%; /* Pastikan teks tetap sesuai dengan lebar box */
+}
+
+/* Gambar Gadis */
+.girl-img {
+  width: 150px; /* Ukuran gambar */
+  object-fit: contain;
+  position: absolute; /* Diposisikan relatif terhadap .medsos-box */
+  top: 36%; /* Posisikan di tengah vertikal */
+  right: 6px; /* Keluar dari sisi kanan box */
+  transform: translateY(-50%); /* Pastikan gambar benar-benar tengah */
+  z-index: 1; /* Berada di bawah teks */
+  pointer-events: none; /* Supaya tidak menghalangi klik elemen lain */
+}
+
+/* Kontainer Ikon Media Sosial */
+.social-icons i {
+  color: #ffffff; /* Mengatur warna ikon */
+  transition: transform 0.3s ease;
+  margin: 0 30px; /* Jarak horizontal (kanan dan kiri) antar ikon */
+  
+}
+
+.social-icons i:hover {
+  transform: scale(1.2); /* Efek zoom saat hover */
+}
+
+.social-icons i:active {
+  transform: translateY(-2px);
+}
+
+.social-icons {
+  margin-top: -10px; /* Dekatkan ke box */
+}
+
+/* Gaya tombol */
+button.btn-primary {
+  background-color: #ffffff; /* Warna latar belakang tombol */
+  color: #43C8F9; /* Warna teks */
+  border: 2px solid #43C8F9; /* Tambahkan border agar lebih menarik */
+}
+
+button.btn-primary:hover {
+  background-color: #43C8F9; /* Warna latar saat hover */
+  color: #ffffff; /* Warna teks saat hover */
+}
+
+/* Responsive adjustments for burger menu */
+.burger-menu {
+  display: none; /* Sembunyikan secara default */
+  flex-shrink: 0; /* Pastikan burger tidak mengecil */
+  margin-left: auto; /* Pindahkan ke kanan */
+}
+
+.burger-menu span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animasi burger menu saat aktif */
+.burger-menu.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+  .burger-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 90px);
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .navbar-links.show {
+    display: flex;
+    transform: translateX(0);
+  }
+}

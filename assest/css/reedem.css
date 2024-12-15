@@ -1,0 +1,377 @@
+/* Reset CSS */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  font-size: 14px;
+  font-family: Inter, sans-serif;
+  background: linear-gradient(rgba(90, 224, 170, 1), rgba(67, 200, 249, 1));
+  overflow-y: auto;
+  height: 100%; /* Pastikan elemen body dan html mengisi seluruh viewport */
+}
+
+/* Navbar Styles */
+.navbar {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  height: 90px;
+  display: flex;
+  justify-content: center; /* Menyusun elemen navbar secara horizontal */
+  align-items: center;     /* Menyusun elemen navbar secara vertikal */
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between; /* Menyusun elemen di kiri dan kanan */
+  align-items: center;           /* Menyusun elemen di tengah secara vertikal */
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+/* Logo */
+.logo {
+  flex-shrink: 0;
+}
+
+.logo img {
+  height: 75px;
+  object-fit: contain;
+  transition: height 0.3s ease;
+}
+
+/* Responsif untuk logo */
+@media (max-width: 1024px) {
+  .logo img {
+    height: 65px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo img {
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    height: 40px;
+  }
+}
+
+/* Navbar Links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;  /* Pastikan item navbar rata tengah */
+}
+
+.nav-item {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 30px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  transform: scale(1.1);
+}
+
+.nav-item:active {
+  transform: translateY(-2px); /* Sedikit turun untuk efek klik */
+}
+
+.nav-item-redeem {
+  color: gray;
+  background: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Profile Image */
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.1);
+}
+
+.profile-img:active {
+  transform: translateY(-2px); /* Sedikit turun untuk efek klik */
+}
+
+/* Burger Menu */
+.burger-menu {
+  display: none;
+  flex-shrink: 0;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.burger-menu span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animasi burger menu */
+.burger-menu.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsif untuk burger menu */
+@media (max-width: 768px) {
+  .burger-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 90px);
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .navbar-links.show {
+    display: flex;
+    transform: translateX(0);
+  }
+}
+
+@media (min-width: 769px) {
+  .navbar-links {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    transform: none;
+  }
+}
+
+/* Main Content */
+.content {
+  margin-top: 95px;
+  padding: 20px;
+  text-align: center;
+  overflow-y: auto;
+}
+
+.title {
+  color: white;
+  font-size: 35px;
+  margin-bottom: 30px;
+}
+
+/* Card Container */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 250px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer; /* Tanda elemen dapat diklik */
+  transition: all 0.3s ease;
+  text-decoration: none; /* Hilangkan underline */
+  color: inherit; /* Warna teks mengikuti properti induk */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Naik saat hover */
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan saat hover */
+}
+
+.card:active {
+  background: rgba(255, 255, 255, 0.3); /* Warna lebih gelap saat diklik */
+  transform: translateY(-2px); /* Sedikit turun untuk efek klik */
+}
+
+.card-image {
+  width: 80%;
+  height: 80%;
+  background-size: cover;
+  background-position: center;
+}
+
+.e-wallet {
+  background-image: url("../images/walet.png");
+}
+
+.furniture {
+  background-image: url("../images/fur.png");
+}
+
+.voucher {
+  background-image: url("../images/vou.png");
+}
+
+.card-text {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 80%; /* Menyesuaikan ukuran kartu */
+  }
+}
+
+.bottom-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.button {
+  width: 200px;
+  height: 50px;
+  background: rgba(255, 250, 250, 0.3);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Shadow normal */
+  text-decoration: none;
+}
+
+/* Hover efek */
+.button:hover {
+  background: rgba(255, 250, 250, 0.4);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Shadow lebih besar saat hover */
+}
+
+/* Efek klik dengan :active */
+.button:active {
+  background: rgba(255, 250, 250, 0.2); /* Warna lebih gelap saat ditekan */
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2); /* Shadow lebih kecil */
+  transform: scale(0.97); /* Sedikit mengecilkan tombol */
+}
+
+.button span {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Responsive adjustments for burger menu */
+.burger-menu {
+  display: none; /* Sembunyikan secara default */
+  flex-shrink: 0; /* Pastikan burger tidak mengecil */
+  margin-left: auto; /* Pindahkan ke kanan */
+}
+
+.burger-menu span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animasi burger menu saat aktif */
+.burger-menu.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+  .burger-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 90px);
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .navbar-links.show {
+    display: flex;
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,63 @@
+.bg-custom {
+  position: relative; /* Untuk memastikan elemen blur tetap dalam konteks */
+  overflow: hidden; /* Sembunyikan konten yang melampaui batas elemen */
+}
+
+.bg-custom::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/Frame_3.png');
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px); /* Atur tingkat blur sesuai kebutuhan */
+  z-index: -1; /* Tempatkan elemen ini di belakang konten utama */
+  transform: scale(1.1); /* Sedikit perbesar untuk menghindari garis tepi */
+}
+
+.btn-login,
+.btn-signup {
+  width: 150px;
+  height: 50px;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  border-radius: 8px;
+  background-color: #00674F;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Efek bayangan untuk timbul */
+  transition: all 0.2s ease; /* Transisi untuk efek yang halus */
+}
+
+.btn-login:hover,
+.btn-signup:hover {
+  background-color: #004a39; /* Warna lebih gelap saat hover */
+  cursor: pointer; /* Ubah kursor menjadi pointer */
+}
+
+.btn-login:active,
+.btn-signup:active {
+  transform: translateY(2px); /* Geser sedikit ke bawah */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Kurangi bayangan untuk efek tertekan */
+}
+
+/* Animasi naik turun */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px); /* Menurunkan jarak naik turun */
+  }
+}
+
+.img-fluid {
+  animation: bounce 1.5s ease-in-out infinite; /* Durasi 1.5 detik, berulang */
+}

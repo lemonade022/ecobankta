@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="assest/css/home.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <!-- Logo di kiri -->
+            <div class="logo">
+                <img src="assest/images/logo.png" alt="Logo">
+            </div>
+    
+            <!-- Elemen burger menu di kanan -->
+            <div class="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    
+            <!-- Elemen navigasi -->
+            <nav class="navbar-links">
+                <a href="#" class="nav-item nav-item-home">Home</a>
+                <a href="about.html" class="nav-item">About</a>
+                <a href="reedem.html" class="nav-item">Redeem</a>
+                <a href="tips.html" class="nav-item">Tips</a>
+                <a href="profile.html" class="profile-link">
+                    <img src="assest/images/user.png" class="profile-img">
+                </a>
+            </nav>
+        </div>
+    </header>    
+    
+    <main class="content">
+        <!-- Section Hero/Landing Page -->
+        <div class="main-content">
+            <div class="profile-card">
+              <a href="profile.html" class="profile-link">
+                <img src="assest/images/user.png" class="profile-img">
+              </a>
+              <div class="profile-details">
+                <h2>Hello, Fulano Alfulansyah</h2>
+                <p>Mari raih keuntungan dengan menjaga lingkunganmu!</p>
+              </div>
+              <div class="notification">&#128276;</div>
+            </div>
+        
+            <div class="points-card">
+              <h3>Your Points</h3>
+              <div class="points">50,000</div>
+              <div class="buttons">
+                <a href="reedem.html" class="button reedem">Redeem Points</a>
+                <a href="#" class="button history">History</a>
+              </div>
+            </div>
+        
+            <div class="service-menu">
+              <h3>Service Menu</h3>
+              <div class="service-item">
+                <span>Eco Bonus</span>
+                <span>&#9654;</span>
+              </div>
+            </div>
+        
+            <div class="leaderboard">
+              <h3>Peringkat Point Terbanyak</h3>
+              <div class="leaderboard-item">
+                <span class="rank">1</span>
+                <span>Agus</span>
+              </div>
+              <div class="leaderboard-item">
+                <span class="rank">2</span>
+                <span>Dadang S</span>
+              </div>
+              <div class="leaderboard-item">
+                <span class="rank">3</span>
+                <span>Syaiful</span>
+              </div>
+              <div class="leaderboard-item">
+                <span class="rank">4</span>
+                <span>Naila Sumarti</span>
+              </div>
+              <div class="leaderboard-item">
+                <span class="rank">5</span>
+                <span>Mega Sari</span>
+              </div>
+            </div>
+          </div>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const burgerMenu = document.querySelector(".burger-menu");
+            const navbarLinks = document.querySelector(".navbar-links");
+
+            burgerMenu.addEventListener("click", () => {
+                burgerMenu.classList.toggle("active");
+                navbarLinks.classList.toggle("show");
+            });
+        });
+    </script>
+</body>
+</html>

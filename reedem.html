@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redemption Page</title>
+    <link rel="stylesheet" href="assest/css/reedem.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <!-- Logo di kiri -->
+            <div class="logo">
+                <img src="assest/images/logo.png" alt="Logo">
+            </div>
+    
+            <!-- Elemen burger menu di kanan -->
+            <div class="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    
+            <!-- Elemen navigasi -->
+            <nav class="navbar-links">
+                <a href="home.html" class="nav-item">Home</a>
+                <a href="about.html" class="nav-item">About</a>
+                <a href="#" class="nav-item nav-item-redeem">Redeem</a>
+                <a href="tips.html" class="nav-item">Tips</a>
+                <a href="profile.html" class="profile-link">
+                    <img src="assest/images/user.png" class="profile-img">
+                </a>
+            </nav>
+        </div>
+    </header>    
+    
+    <main class="content">
+        <h1 class="title">Select Redemption Method</h1>
+        <div class="cards-container">
+            <a href="#" class="card">
+              <div class="card-image e-wallet"></div>
+              <span class="card-text">E-Wallet</span>
+            </a>
+            <a href="#" class="card">
+              <div class="card-image furniture"></div>
+              <span class="card-text">Furniture</span>
+            </a>
+            <a href="#" class="card">
+              <div class="card-image voucher"></div>
+              <span class="card-text">Voucher</span>
+            </a>
+          </div>
+        <div class="bottom-buttons">
+            <!-- Tombol Point History -->
+            <a href="#" class="button">
+                <span>Point History</span>
+            </a>
+            <!-- Tombol Ransom Status -->
+            <a href="#" class="button">
+                <span>Ransom Status</span>
+            </a>
+        </div>        
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const burgerMenu = document.querySelector(".burger-menu");
+            const navbarLinks = document.querySelector(".navbar-links");
+
+            burgerMenu.addEventListener("click", () => {
+                burgerMenu.classList.toggle("active");
+                navbarLinks.classList.toggle("show");
+            });
+        });
+    </script>
+</body>
+</html>

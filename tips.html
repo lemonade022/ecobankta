@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tips Recycling</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assest/css/tips.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <!-- Logo di kiri -->
+            <div class="logo">
+                <img src="assest/images/logo.png" alt="Logo">
+            </div>
+    
+            <!-- Elemen burger menu di kanan -->
+            <div class="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    
+            <!-- Elemen navigasi -->
+            <nav class="navbar-links">
+                <a href="home.html" class="nav-item">Home</a>
+                <a href="about.html" class="nav-item">About</a>
+                <a href="reedem.html" class="nav-item">Redeem</a>
+                <a href="#" class="nav-item nav-item-tips">Tips</a>
+                <a href="profile.html" class="profile-link">
+                    <img src="assest/images/user.png" class="profile-img">
+                </a>
+            </nav>
+        </div>
+    </header>    
+
+    <!-- Main Content -->
+    <main class="content">
+        <div class="container mt-5 pt-5">
+            <!-- Filter dan Judul -->
+            <div class="d-flex justify-content-between align-items-center">
+                <h2 class="mb-3">Tips Recycling</h2>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="filterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        Filter
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="filterDropdown">
+                        <li><a class="dropdown-item" href="#">Minggu Ini</a></li>
+                        <li><a class="dropdown-item" href="#">Bulan Ini</a></li>
+                        <li><a class="dropdown-item" href="#">Tahun Ini</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Kartu Tips Recycling -->
+            <div class="card-container overflow-auto" style="height: 500px;">
+                <div class="row g-3">
+                    <!-- Example Cards -->
+                    <a href="#" class="col-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <img src="assest/images/lampu.png" class="card-img-top" alt="Recycling Tip">
+                            <div class="card-body">
+                                <h5 class="card-title">Recycling Sendok Plastik Menjadi Lampu</h5>
+                                <p class="card-text">
+                                    <i class="bi bi-clock"></i> 4 Desember 2024
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Repeat for other cards -->
+                    <a href="#" class="col-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <img src="assest/images/kursi.png" class="card-img-top" alt="Recycling Tip">
+                            <div class="card-body">
+                                <h5 class="card-title">Cara Membuat kursi dari limbah botol</h5>
+                                <p class="card-text">
+                                    <i class="bi bi-clock"></i> 23 November 2024
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Repeat for other cards -->
+                    <a href="#" class="col-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <img src="assest/images/pot.png" class="card-img-top" alt="Recycling Tip">
+                            <div class="card-body">
+                                <h5 class="card-title">Membuat Pot Unik dari Galon Bekas</h5>
+                                <p class="card-text">
+                                    <i class="bi bi-clock"></i> 19 November 2024
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Repeat for other cards -->
+                    <a href="#" class="col-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <img src="assest/images/paf.png" class="card-img-top" alt="Recycling Tip">
+                            <div class="card-body">
+                                <h5 class="card-title">Pembuatan Pafing dari Limbah Plastik</h5>
+                                <p class="card-text">
+                                    <i class="bi bi-clock"></i> 10 Oktober 2024
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Repeat for other cards -->
+                    <a href="#" class="col-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <img src="assest/images/karpet.png" class="card-img-top" alt="Recycling Tip">
+                            <div class="card-body">
+                                <h5 class="card-title">Membuat Karpet Dari Limbah Bungkus</h5>
+                                <p class="card-text">
+                                    <i class="bi bi-clock"></i> 11 Oktober 2024
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Repeat for other cards -->
+                    <a href="#" class="col-12 col-md-6 col-lg-4">
+                        <div class="card">
+                            <img src="assest/images/tas.png" class="card-img-top" alt="Recycling Tip">
+                            <div class="card-body">
+                                <h5 class="card-title">Tas Cantik dari Bahan Daur Ulang</h5>
+                                <p class="card-text">
+                                    <i class="bi bi-clock"></i> 13 September 2024
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Burger Menu Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const burgerMenu = document.querySelector(".burger-menu");
+            const navbarLinks = document.querySelector(".navbar-links");
+
+            burgerMenu.addEventListener("click", () => {
+                burgerMenu.classList.toggle("active");
+                navbarLinks.classList.toggle("show");
+            });
+        });
+    </script>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
